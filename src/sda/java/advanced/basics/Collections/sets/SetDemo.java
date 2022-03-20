@@ -2,8 +2,11 @@ package sda.java.advanced.basics.Collections.sets;
 
 import sda.java.advanced.basics.Collections.Car;
 
+import java.sql.SQLOutput;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class SetDemo {
     public static void main(String[] args) {
@@ -36,7 +39,42 @@ public class SetDemo {
         carSet.add(car4);
 
         for (Car car : carSet) {
-            System.out.println(car.getName() + " " + car.getEngine());
+            System.out.println(car.getName() + " " + car.getEngine() + " " + car.hashCode());
         }
+        System.out.println();
+        /**
+         * LinkedHashSet pozwala na utrzymanie porządku elementów wg kolejnośći wstawiania
+         */
+        Set<Car> setSortedByEntering = new LinkedHashSet<>();
+        setSortedByEntering.add(car1);
+        setSortedByEntering.add(car2);
+        setSortedByEntering.add(car3);
+        setSortedByEntering.add(car4);
+        System.out.println("Wyświetlamy LinkedHashSet");
+        for(Car car : setSortedByEntering) {
+            System.out.println(car.getName());
+        }
+
+        System.out.println();
+
+        /**
+         * TreeSet będzie układał elementy wg zdefiniowanego mechanizmu sortowania
+         * Zdefiniowanie mechanizmu sortowania obiektów polega na dodaniu na obiekcie
+         * (w naszym przypadku Car) interfejsu Comparable i napisaniu metody compareTo
+         *
+         * //car1.getName().compareTo(car2.getName());
+         */
+
+        Set<Car> treeSet = new TreeSet<>();
+        treeSet.add(car1);
+        treeSet.add(car2);
+        treeSet.add(car3);
+        treeSet.add(car4);
+        System.out.println("Wyświetlamy treeSet");
+        for (Car car : treeSet) {
+            System.out.println(car.getName());
+
+        }
+
     }
 }

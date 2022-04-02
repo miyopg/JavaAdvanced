@@ -39,7 +39,7 @@ public class MainThread {
 
         /**
          * Wątek uruchamiany na klasie anonimowej
-         * wtedy kiedy chcemy zrobić na zasadzie "uruchom i zapomnij"
+         * wtedy kiedy chcemy zrobi na zasadzie "uruchom i zapomnij"ć
          * i nie zamierzamy sprawdzać tego osobnego wątku
          */
 

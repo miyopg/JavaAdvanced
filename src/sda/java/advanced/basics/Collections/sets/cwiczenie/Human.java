@@ -10,11 +10,16 @@ public class Human implements Comparable<Human> {
     private int age;
     private Gender gender;
 
+
+
+
     public Human(String name, String surname, int age, Gender gender) {
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.gender = gender;
+
+
     }
 
     public String getName() {

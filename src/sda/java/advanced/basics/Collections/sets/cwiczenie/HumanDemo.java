@@ -4,6 +4,7 @@ package sda.java.advanced.basics.Collections.sets.cwiczenie;
 import sda.java.advanced.basics.Collections.CarComparedByEngine;
 
 import sda.java.advanced.basics.Collections.sets.cwiczenie.Gender;
+import sda.java.advanced.basics.threads.basics.SeparateThread;
 
 import java.util.*;
 import java.util.ArrayList;
@@ -15,11 +16,11 @@ public class HumanDemo {
 
 
 
-    Human human1 = new Human("Maciek", "Pająk", 24, Gender.MALE);
-    Human human2 = new Human("Joanna", "Byk", 19, Gender.FEMALE);
-    Human human3 = new Human("Iza", "Sroka", 33, Gender.FEMALE);
-    Human human4 = new Human("Wojtek", "Sikora", 22, Gender.MALE);
-    Human human5 = new Human("Julia", "Pajak", 27, Gender.FEMALE);
+        Human human1 = new Human("Maciek", "Pająk", 24, Gender.MALE);
+        Human human2 = new Human("Joanna", "Byk", 19, Gender.FEMALE);
+        Human human3 = new Human("Iza", "Sroka", 33, Gender.FEMALE);
+        Human human4 = new Human("Wojtek", "Sikora", 22, Gender.MALE);
+        Human human5 = new Human("Julia", "Pajak", 27, Gender.FEMALE);
 
     List<Human> humanList = new ArrayList<>();
     humanList.add(human1);
@@ -64,6 +65,10 @@ public class HumanDemo {
         Collections.sort(humanList, new HumanCompareByGenderAndAge());
         printHumanList(humanList);
 
+        System.out.println("=============Wątek Human Report========");
+        HumanReportPrinter HumanReportPrinter = new HumanReportPrinter();
+        HumanReportPrinter.start();
+
     }
 
     private static void printHumanList(List<Human> humanList) {
@@ -71,6 +76,8 @@ public class HumanDemo {
             System.out.println(human.getSurname() + " " + human.getName() + " " + human.getAge() + " " + human.getGender());
         }
     }
+
+
 }
 
 
